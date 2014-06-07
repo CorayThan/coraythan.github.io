@@ -8,7 +8,23 @@ ponyseeker.resizeVideo = ponyseeker.resizeVideo || function() {
 
 ponyseeker.showPage = ponyseeker.showPage || function(pageSelector) {
 	$(".page").hide();
-	$(pageSelector).show();
+	if (!pageSelector) {
+		pageSelector = "#how-to-play";
+	}
+	var $page = $(pageSelector);
+	//var $jumpTo = null;
+	if ($page.lengh < 1) {
+		$page = $("#how-to-play");
+		pageSelector = "#how-to-play";
+	} else if (pageSelector.substring(0, 8) === "#version") {
+		$page = $("#patch-notes");
+		pageSelector = "#patch-notes";
+	//	$jumpTo = $("[href=" + pageSelector + "]");
+	}
+	$page.show();
+	//if ($jumpTo) {
+	//	$jumpTo.click();
+	//}
 	$(".pony-link").parent().removeClass("selected");
 	$('a[href="' + pageSelector + '"]').parent().addClass("selected");
 	if (pageSelector === "#how-to-play") {
@@ -19,17 +35,16 @@ ponyseeker.showPage = ponyseeker.showPage || function(pageSelector) {
 $(document).ready(function(){
 
 	var currentPage = window.location.hash;
-	if (!currentPage) {
-		currentPage = "#how-to-play";
-	}
 	ponyseeker.showPage(currentPage);
 
 	ponyseeker.resizeVideo();
 	setTimeout(ponyseeker.resizeVideo, 300);
 	$(window).resize(ponyseeker.resizeVideo);
 
-	$(".pony-link").click(function() {
+	$(".pony-link").click(function(e) {
 		var pageHref = $(this).attr("href");
 		ponyseeker.showPage(pageHref);
+		e.preventDefault();
+		window.location.hash = this.hash;
 	});
 });
