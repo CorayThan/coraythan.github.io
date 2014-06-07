@@ -12,19 +12,17 @@ ponyseeker.showPage = ponyseeker.showPage || function(pageSelector) {
 		pageSelector = "#how-to-play";
 	}
 	var $page = $(pageSelector);
-	//var $jumpTo = null;
+
 	if ($page.lengh < 1) {
 		$page = $("#how-to-play");
 		pageSelector = "#how-to-play";
 	} else if (pageSelector.substring(0, 8) === "#version") {
 		$page = $("#patch-notes");
 		pageSelector = "#patch-notes";
-	//	$jumpTo = $("[href=" + pageSelector + "]");
+
 	}
 	$page.show();
-	//if ($jumpTo) {
-	//	$jumpTo.click();
-	//}
+
 	$(".pony-link").parent().removeClass("selected");
 	$('a[href="' + pageSelector + '"]').parent().addClass("selected");
 	if (pageSelector === "#how-to-play") {
@@ -46,5 +44,16 @@ $(document).ready(function(){
 		ponyseeker.showPage(pageHref);
 		e.preventDefault();
 		window.location.hash = this.hash;
+	});
+
+	$("#hamburger-icon").click(function() {
+		$(this).hide();
+		$("#vert-menu").show();
+		$("#vert-menu-x").css("display", "inline");
+	});
+	$("#vert-menu-x").click(function() {
+		$(this).css("display", "none");
+		$("#vert-menu").hide();
+		$("#hamburger-icon").show();
 	});
 });
