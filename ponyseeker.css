@@ -53,6 +53,12 @@
 	display: none;
 }
 
+#sticky-menu {
+	position: fixed;
+    top: 1em;
+    left: 0em;
+}
+
 * {
 	color: #461e78;
 	font-family: 'Ubuntu', arial, serif;
