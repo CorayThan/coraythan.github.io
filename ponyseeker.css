@@ -6,10 +6,10 @@
 
 /* < medium width settings go here */
 
-.hide-on-medium {
+.hide-on-medium-or-less {
 	display:none;
 }
-.show-on-medium {
+.show-on-medium-or-less {
 	display:block;
 }
 
@@ -19,10 +19,10 @@
 
 	/* medium width + settings go here */
 
-	.hide-on-medium {
+	.hide-on-medium-or-less {
 		display:block;
 	}
-	.show-on-medium {
+	.show-on-medium-or-less {
 		display:none;
 	}
 
@@ -63,6 +63,24 @@ h2 {
 	color: #a71cad;
 	font-family: 'junction-bold', arial, serif;
 	font-weight: bold;
+}
+
+.center-text {
+	text-align: center;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+h1.page-title {
+	color: #2f07d1;
+	font-family: 'Ubuntu', arial, serif;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 0em;
+	margin-bottom: 0.25em;
+	font-weight: lighter;
+	font-size: 3em;
+	letter-spacing: normal;
 }
 
 a {
