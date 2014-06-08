@@ -28,6 +28,7 @@
 
 	.side-bar {
 		background-color: #fbfbfb;
+		margin-left: 1em;
 		padding: 1.5em;
 		padding-top: 0.25em;
 	}
@@ -54,9 +55,7 @@
 }
 
 #sticky-menu {
-	position: fixed;
-    top: 1em;
-    left: 0em;
+
 }
 
 * {
@@ -92,6 +91,8 @@ a {
 	max-width:740px;
 	margin-left:auto;
 	margin-right:auto;
+	margin-top:1em;
+	margin-bottom: 1em;
 }
 
 .blue-box {
@@ -145,11 +146,13 @@ a.pony-link {
 }
 
 .left-column {
-	padding-right: 1em;
+	padding-right: 0.5em;
+	padding-left: 0.5em;
 }
 
 .right-column {
-	padding-left: 1em;
+	padding-left: 0.5em;
+	padding-right:0.5em;
 }
 
 #helper-video {
