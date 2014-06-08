@@ -46,16 +46,12 @@
 }
 
 #vert-menu-x {
-	position: relative;
+	position: fixed;
 	left: 9.75em;
-	top: 2em;
+	top: 0em;
 	z-index: 1001;
 	cursor: pointer;
 	display: none;
-}
-
-#sticky-menu {
-
 }
 
 * {
@@ -169,4 +165,10 @@ a.pony-link {
 
 h2.no-top-margin {
 	margin-top: 0em;
+}
+
+#sticky-menu {
+	position: fixed;
+	left: 0px;
+	top: 0px;
 }
