@@ -190,3 +190,8 @@ h2.no-top-margin {
 	top: 0px;
 	z-index: 1002;
 }
+
+.right-side-padding {
+	padding-right: 10px;
+	margin-right: -5px;
+}
