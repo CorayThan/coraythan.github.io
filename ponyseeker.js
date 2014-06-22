@@ -4,18 +4,21 @@ ponyseeker.resizeVideo = ponyseeker.resizeVideo || function() {
 	var helperVideo = $('#helper-video');
 	var width = helperVideo.width();
 	helperVideo.css('height', (width * 3) / 4);
+	var helperVideo2 = $('#helper-video-2');
+	var width = helperVideo2.width();
+	helperVideo2.css('height', (width * 3) / 4);
 };
 
 ponyseeker.showPage = ponyseeker.showPage || function(pageSelector) {
 	$(".page").hide();
 	if (!pageSelector) {
-		pageSelector = "#how-to-play";
+		pageSelector = "#about-ponyseeker";
 	}
 	var $page = $(pageSelector);
 
 	if ($page.lengh < 1) {
-		$page = $("#how-to-play");
-		pageSelector = "#how-to-play";
+		$page = $("#about-ponyseeker");
+		pageSelector = "#about-ponyseeker";
 	} else if (pageSelector.substring(0, 8) === "#version") {
 		$page = $("#patch-notes");
 		pageSelector = "#patch-notes";
@@ -25,9 +28,7 @@ ponyseeker.showPage = ponyseeker.showPage || function(pageSelector) {
 
 	$(".pony-link").parent().removeClass("selected");
 	$('a[href="' + pageSelector + '"]').parent().addClass("selected");
-	if (pageSelector === "#how-to-play") {
-		ponyseeker.resizeVideo();
-	}
+	ponyseeker.resizeVideo();
 };
 
 ponyseeker.hideVertMenu = ponyseeker.hideVertMenu || function() {
