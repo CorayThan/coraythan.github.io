@@ -3,10 +3,10 @@ var ponyseeker = ponyseeker || {};
 ponyseeker.resizeVideo = ponyseeker.resizeVideo || function() {
 	var helperVideo = $('#helper-video');
 	var width = helperVideo.width();
-	helperVideo.css('height', (width * 3) / 4);
+	helperVideo.css('height', (width * 5) / 8);
 	var helperVideo2 = $('#helper-video-2');
 	var width = helperVideo2.width();
-	helperVideo2.css('height', (width * 3) / 4);
+	helperVideo2.css('height', (width * 5) / 8);
 };
 
 ponyseeker.showPage = ponyseeker.showPage || function(pageSelector) {
